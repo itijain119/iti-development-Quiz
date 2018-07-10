@@ -1,0 +1,40 @@
+{% extends 'base.html'  %}
+
+
+
+    {% block 'nav1' %}
+        <li><a href="/main/availablequiz"><font size="4">GiveQuiz</font></a></li>
+        <li><a href="/main/givenquizzes"><font size="4">Marks</font></a></li>
+    {% endblock %}
+{% block 'content' %}
+<div class = "container">
+    <div class="jumbotron" style="background-color : Thistle;">
+        <img src="{{student.student_pic.url}}" class="img-rounded" width="180" align="left">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="bor"> Name :</div>
+                <div class="bor">Enrollment No. :</div>
+                <div class="bor">Father's name :</div>
+                <div class="bor">Mother's name :</div>
+                <div class="bor">Address : </div>
+                <div class="bor">City : </div>
+                <div class="bor">State :</div>
+                <div class="bor">Pincode :</div>
+                <div class="bor">Phone no. :</div>
+            </div>
+            <div class="col-sm-2">
+                <div class="bor"> <b>{{student.user.username}}</b></div>
+                <div class="bor"> <b>{{student.student_enrollmentno}}</b></div>
+                <div class="bor"><b> {{student.student_father_name}}</b></div>
+                <div class="bor"> <b>{{student.student_mother_name}}</b></div>
+                <div class="bor"><b>{{student.student_address }}</b></div>
+                <div class="bor"><b>{{student.student_city }}</b></div>
+                <div class="bor"><b>{{student.student_state}}</b></div>
+                <div class="bor"><b>{{student.student_pincode}}</b></div>
+                <div class="bor"><b>{{student.student_phoneno}}</b></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

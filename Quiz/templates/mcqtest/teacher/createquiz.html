@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<h1>Create a Quiz</h1>
+<p style="color : red">{{message}}</p>
+<form method="post" action="/main/submitquiz/">
+    {% csrf_token %}
+    Quiz name:<input type="text" name = 'quizname'>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

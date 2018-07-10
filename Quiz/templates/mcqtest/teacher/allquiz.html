@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block 'content'  %}
+<div class="container">
+    <table style="width:70%">
+        <h3>All Quizzes</h3>
+         <tr>
+             <th>QuizName</th>
+        </tr>
+         {% if allquiz %}
+            {% for quiz in allquiz  %}
+                <tr>
+                    <td>{{quiz.quiz_name}}</td>
+                    <td><a href="{% url 'showresult' quiz.pk  %}">Show result</a></td>
+                </tr>
+            {% endfor %}
+        {% else %}
+        <td><p><i><h3>No quiz yet</h3></i></p></td>
+        {% endif  %}
+    </table>
+</div>
+{% endblock  %}

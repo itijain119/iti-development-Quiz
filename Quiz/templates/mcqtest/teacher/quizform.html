@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+    <div class="container" style="background-color : SkyBlue; width : 500px;">
+      <h3>Enter Questions</h3>
+      <form action="/main/submitform/" method="post">
+          {% csrf_token %}
+        <div class="form-group">
+          <label for="qno">QuesNo.:</label>
+          <input type="text" class="form-control" name="qno">
+        </div>
+          <div class="form-group ">
+          <label for="quescontent">Enter Question:</label>
+          <textarea class="form-control" name="quescontent"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="opt1">Option 1:</label>
+          <input type="text" class="form-control" name="opt1">
+        </div>
+          <div class="form-group">
+          <label for="opt2">Option 2:</label>
+          <input type="text" class="form-control" name="opt2">
+        </div>
+          <div class="form-group">
+          <label for="opt3">Option 3:</label>
+          <input type="text" class="form-control" name="opt3">
+        </div>
+          <div class="form-group">
+          <label for="opt4">Option 4:</label>
+          <input type="text" class="form-control" name="opt4">
+        </div>
+          <div class="form-group">
+          <label for="correct">Correct option:</label>
+          <input type="text" class="form-control" name="correct">
+        </div>
+        <button type = 'submit' class="button1">Submit</button><br><br>
+      </form>
+      <p>No more ques to be added click ShowQuiz button to see all added Questions of Quiz</p>
+          <p style="color:red">Warning:After clicking ShowQuiz button no more Ques can be added</p>
+          <a href="/main/showques/">ShowQuiz</a>
+    </div>
+
+{% endblock %}

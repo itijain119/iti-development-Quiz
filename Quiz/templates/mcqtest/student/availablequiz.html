@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<style>
+
+</style>
+<div class="container">
+    <table style="width:70%">
+    <h3>all quizzes</h3>
+    <tr>
+        <th>TeacherName</th>
+        <th>QuizName</th>
+    </tr>
+    {% if quizs %}
+        {% for quiz in quizs %}
+            <tr>
+                <td class="align-middle">{{ quiz.owner }}</td>
+                <td>{{ quiz.quiz_name }}</td>
+                <td><a href="{% url 'instruction' quiz.pk %}" class="btn btn-primary">Start quiz</a></td>
+
+            </tr>
+        {% endfor %}
+    {% else %}
+        <td><h3><i>No Quiz Yet</i></h3></td>
+    {% endif %}
+    </table>
+
+</div>
+{% endblock %}

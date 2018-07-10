@@ -1,0 +1,37 @@
+{% extends 'base.html'  %}
+
+
+    {% block 'nav1' %}
+<li><a href="/main/createquiz/"><font size="4">AddQuiz</font></a></li>
+<li><a href="/main/allquiz/"><font size="4">AllQuizes</font></a></li>
+   {% endblock %}
+{% block 'content' %}
+<div class = "container">
+    <div class="jumbotron" style="background-color : Thistle;">
+        <img src="{{teacher.teacher_pic.url}}" class="img-rounded" width="180" align="left">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="bor"> Name :</div>
+                <div class="bor">Id No. :</div>
+                <div class="bor">Qualifications :</div>
+                <div class="bor">Address : </div>
+                <div class="bor">City : </div>
+                <div class="bor">State :</div>
+                <div class="bor">Pincode :</div>
+                <div class="bor">Phone no. :</div>
+            </div>
+            <div class="col-sm-2">
+                <div class="bor"> <b>{{teacher.user.username}}</b></div>
+                <div class="bor"> <b>{{teacher.teacher_sno}}</b></div>
+                <div class="bor"><b> {{teacher.teacher_qualification}}</b></div>
+                <div class="bor"><b>{{teacher.teacher_address }}</b></div>
+                <div class="bor"><b>{{teacher.teacher_city }}</b></div>
+                <div class="bor"><b>{{teacher.teacher_state}}</b></div>
+                <div class="bor"><b>{{teacher.teacher_pincode}}</b></div>
+                <div class="bor"><b>{{teacher.teacher_phoneno}}</b></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

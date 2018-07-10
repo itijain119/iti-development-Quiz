@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<style>
+body{
+            background-color: LightYellow;
+        }
+
+button[type=submit] {
+    background-color: DarkSlateGray;
+    color: white;
+    margin-top : 15px;
+    margin-right : 20px;
+    padding: 5px 10px;
+    font-size : 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: centre;
+}
+</style>
+<h1><center><font size="7">Welcome To Online Quiz</font></center></h1>
+<h3><center><font size="4">Login To Continue</font></center></h3>
+   {% if form.errors %}
+        <center><p style="color: Red">Your username and password didn't match.Please try again.</p></center>
+    {% endif %}
+    <form class="login_form" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+
+        <p><font size="3"> {{ field.label_tag }}</font><br>
+            {{ field }}</p>
+                {% for error in field.errors %}
+                <p style="color: red">{{ error }}</p>
+                {% endfor %}
+                {% if field.help_text %}
+                    <p><small style="color: grey">{{ field.help_text }}</small></p>
+                {% endif %}
+        </p>
+        {% endfor %}
+        <center><button type="submit">Log in</button></center>
+    </form>
+
+
+{% endblock %}

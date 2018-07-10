@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block 'content'  %}
+
+<div class="container">
+    <table style="width:70%">
+    <h3>All Given Quizzes</h3>
+    <tr>
+        <th>QuizTeacher</th>
+        <th>QuizName</th>
+        <th>Marks</th>
+    </tr>
+    {% if allquizzes %}
+        {% for quiz in allquizzes %}
+            <tr>
+                <td>{{ quiz.quizgiven.owner.user }}</td>
+                <td>{{ quiz.quizgiven }}</td>
+                <td>{{ quiz.marks }}</td>
+
+            </tr>
+        {% endfor %}
+    {% else %}
+        <td><h3><i>No Quiz Given Yet</i></h3></td>
+    {% endif %}
+    </table>
+
+</div>
+
+{% endblock %}

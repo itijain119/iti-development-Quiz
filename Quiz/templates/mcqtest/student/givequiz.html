@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block 'content'  %}
+
+<style>
+    input[type="radio"]{
+  margin:  20px 20px 30px 100px;
+}
+</style>
+<div class="container">
+
+    <form action="{% url 'givequiz' %}" method="post" >
+        {% csrf_token %}
+        Question:{{ quest.ques_text }}<br>
+        <input type="radio" name="youranswer" value="{{quest.option1}}">{{quest.option1}}<br>
+        <input type="radio" name="youranswer" value="{{quest.option2}}">{{quest.option2}}<br>
+        <input type="radio" name="youranswer" value="{{quest.option3}}">{{quest.option3}}<br>
+        <input type="radio" name="youranswer" value="{{quest.option4}}">{{quest.option4}}<br>
+        <br>
+        <br>
+
+        <button type="sumbit" class = 'button1'>Next</button>
+    </form>
+</div>
+{% endblock %}
+
+
